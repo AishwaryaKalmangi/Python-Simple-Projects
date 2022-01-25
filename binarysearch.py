@@ -1,19 +1,18 @@
-def binary_searchiter(arr, n):
-    low = 0
-    high = len(arr) - 1
-    while low <= high:
-        mid = (high + low) // 2
-        if arr[mid] < n:
-            low = mid + 1
-        elif arr[mid] > n:
-            high = mid - 1
+def binarysearch(nums, x):
+    least=0
+    high=len(nums)-1
+    #print(mid)
+    while least<=high:
+        mid = least + high // 2
+        print(mid)
+        if nums[mid] > x:
+            high=mid-1
+        elif nums[mid] < x:
+            least=mid+1
         else:
             return mid
+    print('Not found')
     return -1
-arr = [4, 7, 9, 16, 20, 25]
-n = 25
-r = binary_searchiter(arr, n)
-if r != -1:
-    print("Element found at index", str(r))
-else:
-    print("Element is not present in array")
+
+
+binarysearch([1,2,3,4,5,6,7,8],2) #This will return the index of element we want to search
